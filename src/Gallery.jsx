@@ -1,7 +1,11 @@
 import GalleryItem from './GalleryItem'
 
-export default function Gallery() {
+export default function Gallery(props) {
     return <div className="gallery">
-        <GalleryItem />
+        {
+            props.data.map((result, i) => {
+                return <GalleryItem key={`track ${i}`} data={result} />
+            })
+        }
     </div>
 }
