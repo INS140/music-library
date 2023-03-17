@@ -1,9 +1,13 @@
+import { useContext } from 'react'
+import { DataContext } from './DataContext'
 import GalleryItem from './GalleryItem'
 
-export default function Gallery(props) {
+export default function Gallery() {
+    const data = useContext(DataContext)
+
     return <div className="gallery">
         {
-            props.data.map((item, i) => {
+            data.map((item, i) => {
                 return <GalleryItem key={`track ${i}`} data={item} />
             })
         }
