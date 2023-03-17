@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import Gallery from './Gallery'
 import AlbumView from './AlbumView'
@@ -16,7 +16,6 @@ export default function App() {
         try {
           const res = await fetch(`https://itunes.apple.com/search?term=${search}`)
           const resData = await res.json()
-          console.log(resData.results[0])
           if (resData.results.length > 0) {
             setData(resData.results)
             setMessage('Search for more Music!!!')
